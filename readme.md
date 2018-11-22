@@ -3,6 +3,7 @@
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=n-txrCMvdms" target="_blank"><img src="http://img.youtube.com/vi/n-txrCMvdms/0.jpg"
 alt="CLICK HERE for a Video Introduction To The Modulator Crate And Play Application" width="240" height="180" border="2" /></a>
+Check out the video above for an introduction to the application and crate!
 
 An environment to visualize and test the modulator crate and to experiment with
 expressive 2d primitive rendering. Based on Piston Window, this application is
