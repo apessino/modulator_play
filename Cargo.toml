@@ -1,0 +1,33 @@
+[package]
+name = "modulator_play"
+version = "0.1.0"
+
+description = "A Rust playground for experimenting with types from the Modulator crate"
+authors = ["Andrea Pessino <andrea@readyatdawn.com>"]
+categories = ["simulation", "game-engines", "gui"]
+
+keywords = ["modulation", "LFO", "wave", "generator", "animation", "spring", "physics", "game", "engine", "UI", "piston", "piston_window"]
+
+license  = "MIT"
+repository = "https://github.com/apessino/modulator_play"
+readme = "readme.md"
+
+[dependencies]
+modulator = "0.1.0"
+cgmath = "0.16.1"
+num-complex = "0.2.1"
+rand = "0.5.5"
+
+piston_window = "0.83.0"
+piston2d-gfx_graphics = "0.53.0"
+piston-shaders_graphics2d = "0.3.1"
+piston-gfx_texture = "0.34.0"
+shader_version = "0.3.0"
+gfx = "0.17.1"
+gfx_device_gl = "0.15.3"
+draw_state = "0.8.0"
+find_folder = "0.3.0"
+
+[dependencies.piston2d-graphics]
+version = "0.27.0"
+features = ["glyph_cache_rusttype"]
