@@ -22,3 +22,5 @@ If you want to get the check out the Modulator crate and the types it provides:
 [CLICK HERE to go to the Modulator crate repository](https://github.com/apessino/modulator_play)
 
 Copyright© 2018 Ready At Dawn Studios
+
+NOTICE: this application includes the Fira Code Medium (ttf) font in the ```asset``` folder. Go [here](https://github.com/tonsky/FiraCode) for license/copyright information and to get this wonderful font.
