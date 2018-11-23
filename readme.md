@@ -20,7 +20,7 @@ You can skip the --release to build and run the application in debug.
 
 If you want to get the check out the Modulator crate and the types it provides:
 
-[CLICK HERE to go to the Modulator crate repository](https://github.com/apessino/modulator_play)
+[CLICK HERE to go to the Modulator crate repository](https://github.com/apessino/modulator)
 
 Copyright© 2018 Ready At Dawn Studios
 
