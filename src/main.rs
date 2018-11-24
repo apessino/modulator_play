@@ -66,7 +66,7 @@ fn main() {
     let mut earlier = Instant::now();
     while let Some(e) = window.next() {
         let dt = time_delta(&mut earlier); // `earlier` updated in place
-        update(&e, dt, &mut state, &mut data);
+        update(&e, dt, &mut state, &mut data, &window);
 
         if let Some(args) = e.render_args() {
             window.window.make_current();
@@ -1543,7 +1543,7 @@ fn time_delta(earlier: &mut Instant) -> u64 {
 }
 
 /// Update the simulation
-fn update(e: &piston_window::Event, dt: u64, st: &mut StateData, d: &mut DrawData) {
+fn update(e: &piston_window::Event, dt: u64, st: &mut StateData, d: &mut DrawData, w: &PistonWindow) {
     if st.paused == false {
         st.m1.advance(dt);
         st.m2.advance(dt);
@@ -1622,7 +1622,8 @@ fn update(e: &piston_window::Event, dt: u64, st: &mut StateData, d: &mut DrawDat
 
     // Cache the current mouse position
     if let Some(args) = e.mouse_cursor_args() {
-        d.mouse_pos = vec2(args[0] as f32, args[1] as f32);
+        let dpi = w.window.window.get_hidpi_factor() as f32;
+        d.mouse_pos = vec2(args[0] as f32 * dpi, args[1] as f32 * dpi);
     }
 
     // Track the mouse pressed/released state
