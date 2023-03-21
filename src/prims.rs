@@ -828,13 +828,15 @@ where
                     &self.c2d.pos,
                     from_raw_parts(verts.as_ptr() as *const PositionFormat, 6),
                     self.c2d.offset,
-                ).unwrap();
+                )
+                .unwrap();
             self.encoder
                 .update_buffer(
                     &self.c2d.color,
                     from_raw_parts(vcols.as_ptr() as *const ColorFormat, 6),
                     self.c2d.offset,
-                ).unwrap();
+                )
+                .unwrap();
             self.c2d.offset += 6;
         }
 
@@ -847,13 +849,15 @@ where
                         &self.c2d.pos,
                         from_raw_parts([center, v0, v1].as_ptr() as *const PositionFormat, 3),
                         self.c2d.offset,
-                    ).unwrap();
+                    )
+                    .unwrap();
                 self.encoder
                     .update_buffer(
                         &self.c2d.color,
                         from_raw_parts([self.fill_color, c0, c1].as_ptr() as *const ColorFormat, 3),
                         self.c2d.offset,
-                    ).unwrap();
+                    )
+                    .unwrap();
                 self.c2d.offset += 3;
             }
         }
@@ -1004,14 +1008,16 @@ where
                         &self.c2d.pos,
                         from_raw_parts(p.as_ptr() as *const PositionFormat, 3),
                         self.c2d.offset,
-                    ).unwrap();
+                    )
+                    .unwrap();
 
                 self.encoder
                     .update_buffer(
                         &self.c2d.color,
                         from_raw_parts(cols.as_ptr() as *const ColorFormat, 3),
                         self.c2d.offset,
-                    ).unwrap();
+                    )
+                    .unwrap();
 
                 self.c2d.offset += 3;
             }
@@ -1251,7 +1257,7 @@ fn corrected_lines(
 }
 
 /// Given a `line`, its index `i`, the total number of lines `n`, the correction factor `scale`
-/// and the thickness at line[0] and line[1] `thickness` calculate and return the line
+/// and the `thickness` at `line[0]` and `line[1]` calculate and return the line
 /// corrected as determined by `scale`
 fn corrected_line(
     line: [Vec2; 2],
@@ -1477,7 +1483,8 @@ impl<R: gfx::Resources> Prims2d<R> {
                     .set(GLSL::V1_50, colored::FRAGMENT_GLSL_150_CORE)
                     .get(glsl)
                     .unwrap(),
-            ).unwrap();
+            )
+            .unwrap();
 
         let colored_pipeline = |factory: &mut F,
                                 blend_preset: Blend,
@@ -1497,7 +1504,8 @@ impl<R: gfx::Resources> Prims2d<R> {
                         blend_ref: (),
                         scissor: (),
                     },
-                ).unwrap()
+                )
+                .unwrap()
         };
 
         let colored = PsoStencil::new(factory, colored_pipeline);
@@ -1508,14 +1516,16 @@ impl<R: gfx::Resources> Prims2d<R> {
                 gfx::buffer::Role::Vertex,
                 gfx::memory::Usage::Dynamic,
                 gfx::memory::Bind::empty(),
-            ).expect("Could not create `buffer_pos`");
+            )
+            .expect("Could not create `buffer_pos`");
         let buffer_color = factory
             .create_buffer(
                 BUFFER_SIZE * CHUNKS,
                 gfx::buffer::Role::Vertex,
                 gfx::memory::Usage::Dynamic,
                 gfx::memory::Bind::empty(),
-            ).expect("Could not create `buffer_color`");
+            )
+            .expect("Could not create `buffer_color`");
 
         Prims2d {
             offset: 0,
